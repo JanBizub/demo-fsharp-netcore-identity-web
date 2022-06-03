@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Server", "src\spa-giraffe-fable\Server\Server.fsproj", "{F3E81D31-5472-472A-94D4-388CEF8D4BD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spa-giraffe-fable", "spa-giraffe-fable", "{CAE85A58-5501-493E-941F-DA4B8DC0A206}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3E81D31-5472-472A-94D4-388CEF8D4BD0} = {CAE85A58-5501-493E-941F-DA4B8DC0A206}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D153479-C90C-46AE-99A1-16ADC719185A}
+	EndGlobalSection
+EndGlobal
