@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="src\TGCEditor\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="paket.references" />
+    <Content Include="package.json" />
+    <Content Include="webpack.config.js" />
+    <Compile Include="src\TimesheetAppTypes.fs" />
+    <Compile Include="src\TimesheetAppRouter.fs" />
+    <Compile Include="src\TimesheetAppMsal.fs" />
+    <Compile Include="src\TimesheetAppState.fs" />
+    <Compile Include="src\TimesheetAppView.fs" />
+    <Compile Include="src\Main.fs" />
+    <Content Include="web\assets\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\fable-msal\Fable.Msal\Fable.Msal.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\..\.paket\Paket.Restore.targets" />
+</Project>
