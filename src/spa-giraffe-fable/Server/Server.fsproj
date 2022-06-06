@@ -7,6 +7,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="paket.references" />
+    <Compile Include="Handler.fs" />
+    <Compile Include="Home.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

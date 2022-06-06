@@ -10,7 +10,8 @@ group GirraffeWebApp
     nuget Giraffe.ViewEngine 1.4.0
     nuget Thoth.Json.Giraffe 5.0.0
     nuget Ply 0.3.1
-    nuget Microsoft.Identity.Web 1.24.1
+    nuget Microsoft.Identity.Web 1.25.0
+    nuget Microsoft.Identity.Web.UI 1.25.0
 
 group Fable
     source https://www.nuget.org/api/v2

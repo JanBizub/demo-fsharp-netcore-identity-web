@@ -6,3 +6,5 @@ group GirraffeWebApp
     Thoth.Json.Giraffe
     Ply
     Microsoft.Identity.Web
+    Microsoft.Identity.Web.UI
+    
