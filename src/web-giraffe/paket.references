@@ -1,0 +1,8 @@
+﻿FSharp.Core
+
+group GirraffeWebApp
+    Giraffe
+    Giraffe.ViewEngine
+    Thoth.Json.Giraffe
+    Ply
+    Microsoft.Identity.Web

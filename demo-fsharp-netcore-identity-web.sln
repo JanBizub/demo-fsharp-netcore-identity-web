@@ -7,6 +7,21 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Server", "src\spa-giraffe-f
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spa-giraffe-fable", "spa-giraffe-fable", "{CAE85A58-5501-493E-941F-DA4B8DC0A206}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Client", "src\spa-giraffe-fable\Client\Client.fsproj", "{64853CB7-99F9-4322-9F8B-85B75429B6E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{C17B6392-86F8-4A0B-AEEC-3B84A3F8496C}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fable-msal", "fable-msal", "{7F84A222-8CB9-4EF0-94A4-80B0703CF2F3}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Fable.Msal", "src\fable-msal\Fable.Msal\Fable.Msal.fsproj", "{C3D79EF0-D8EB-401E-9DC6-C3D367F10291}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web-giraffe", "web-giraffe", "{2C848CA7-2AF0-4DEC-8065-493168054F62}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebApplication", "src\web-giraffe\WebApplication.fsproj", "{BD8B503E-B1D3-497D-A5A7-F736C1790D22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +32,27 @@ Global
 		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3E81D31-5472-472A-94D4-388CEF8D4BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64853CB7-99F9-4322-9F8B-85B75429B6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64853CB7-99F9-4322-9F8B-85B75429B6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64853CB7-99F9-4322-9F8B-85B75429B6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64853CB7-99F9-4322-9F8B-85B75429B6E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D79EF0-D8EB-401E-9DC6-C3D367F10291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D79EF0-D8EB-401E-9DC6-C3D367F10291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D79EF0-D8EB-401E-9DC6-C3D367F10291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D79EF0-D8EB-401E-9DC6-C3D367F10291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F3E81D31-5472-472A-94D4-388CEF8D4BD0} = {CAE85A58-5501-493E-941F-DA4B8DC0A206}
+		{64853CB7-99F9-4322-9F8B-85B75429B6E8} = {CAE85A58-5501-493E-941F-DA4B8DC0A206}
+		{C3D79EF0-D8EB-401E-9DC6-C3D367F10291} = {7F84A222-8CB9-4EF0-94A4-80B0703CF2F3}
+		{BD8B503E-B1D3-497D-A5A7-F736C1790D22} = {2C848CA7-2AF0-4DEC-8065-493168054F62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D153479-C90C-46AE-99A1-16ADC719185A}
