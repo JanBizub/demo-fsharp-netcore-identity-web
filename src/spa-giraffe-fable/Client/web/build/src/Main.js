@@ -1,5 +1,4 @@
-import { createSilentRequest, createMsalInstance } from "../Fable/Fable.Msal/Fable.Msal/Fable.Msal.js";
-import { clientId as clientId_1 } from "./AppConfig.js";
+import { createSilentRequest, createMsalInstance } from "../fable-msal/Fable.Msal/Fable.Msal.js";
 import { ProgramModule_mkProgram } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { update as update_1, init as init_1 } from "./TimesheetAppState.js";
 import { createElement } from "react";
@@ -9,7 +8,7 @@ import { lazyView2With } from "../fable_modules/Fable.Elmish.HMR.4.1.0/common.fs
 import { uncurry } from "../fable_modules/fable-library.3.7.11/Util.js";
 import { ProgramModule_Internal_toNavigableWith, ProgramModule_Internal_subscribe, ProgramModule_Internal_unsubscribe } from "../fable_modules/Fable.Elmish.Browser.3.0.4/navigation.fs.js";
 import { parseHash } from "../fable_modules/Fable.Elmish.Browser.3.0.4/parser.fs.js";
-import { urlUpdate as urlUpdate_1, pageParser } from "./TimesheetAppRouter.js";
+import { urlUpdate as urlUpdate_2, pageParser } from "./TimesheetAppRouter.js";
 import { Program_withDebuggerUsing, Debugger_showWarning, Debugger_showError } from "../fable_modules/Fable.Elmish.Debugger.3.3.0/debugger.fs.js";
 import { empty as empty_1, cons, singleton, ofArray } from "../fable_modules/fable-library.3.7.11/List.js";
 import { newGuid } from "../fable_modules/fable-library.3.7.11/Guid.js";
@@ -32,9 +31,16 @@ import { Model$1, Msg$1 } from "../fable_modules/Fable.Elmish.HMR.4.1.0/hmr.fs.j
 import { ProgramModule_map, ProgramModule_runWith } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { PromiseBuilder__Delay_62FBFDE1, PromiseBuilder__Run_212F1D4B } from "../fable_modules/Fable.Promise.2.2.0/Promise.fs.js";
 import { promise } from "../fable_modules/Fable.Promise.2.2.0/PromiseImpl.fs.js";
-import { RedirectRequest } from "../Fable/Fable.Msal/Fable.Msal/Fable.Msal.Types.js";
+import { RedirectRequest } from "../fable-msal/Fable.Msal/Fable.Msal.Types.js";
 
-export const pci = createMsalInstance(clientId_1);
+export const clientId = "4a84817c-572d-4769-9327-a60502b1d938";
+
+export const authority = "a6f31cb4-f0fc-4936-8c48-b9c915f41547";
+
+export const pci = (() => {
+    const tupledArg = [clientId, authority];
+    return createMsalInstance(tupledArg[0], tupledArg[1]);
+})();
 
 export function authenticatedProgram(pci_1) {
     return ProgramModule_mkProgram(init_1, (msg, state) => update_1(pci_1, msg, state), (state_1, dispatch) => createElement(Render, {
@@ -45,14 +51,14 @@ export function authenticatedProgram(pci_1) {
 
 export function createProgram(program) {
     let program_4, onLocationChange;
-    const program_7 = Program_Internal_withReactSynchronousUsing((equal, view, state_1, dispatch_1) => lazyView2With(uncurry(2, equal), uncurry(2, view), state_1, dispatch_1), "aimtec-wrk-app", (program_4 = ((onLocationChange = ((dispatch) => {
+    const program_7 = Program_Internal_withReactSynchronousUsing((equal, view, state_1, dispatch_1) => lazyView2With(uncurry(2, equal), uncurry(2, view), state_1, dispatch_1), "elmish-app", (program_4 = ((onLocationChange = ((dispatch) => {
         if (!(module.hot == null)) {
             if (module.hot.status() !== "idle") {
                 ProgramModule_Internal_unsubscribe();
             }
         }
         ProgramModule_Internal_subscribe(dispatch);
-    }), ProgramModule_Internal_toNavigableWith((location) => parseHash(pageParser, location), urlUpdate_1, program, onLocationChange))), (() => {
+    }), ProgramModule_Internal_toNavigableWith((location) => parseHash(pageParser, location), urlUpdate_2, program, onLocationChange))), (() => {
         let copyOfStruct, copyOfStruct_1, copyOfStruct_2, deflate, inflate, port, address, inputRecord_1, port_1, address_1, inputRecord_2;
         try {
             let patternInput;

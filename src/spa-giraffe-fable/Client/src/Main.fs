@@ -8,8 +8,8 @@ open Elmish.UrlParser
 open Fable.Msal
 open Elmish.HMR // Elmish.HMR must be last open statement in order to HMR works correctly. 
 
-let clientId = "xxx-xxxxx"
-let authority = "xxxx-xxxx"
+let clientId  = "4a84817c-572d-4769-9327-a60502b1d938"
+let authority = "a6f31cb4-f0fc-4936-8c48-b9c915f41547"
 
 let pci = 
   (clientId, authority)

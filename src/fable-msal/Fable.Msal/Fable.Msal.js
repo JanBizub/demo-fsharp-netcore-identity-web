@@ -8,7 +8,7 @@ export var createMsalInstance = (clientId,authority) => {
   const msalConfig = {
     auth: {
       clientId: clientId,
-      authority: authority
+      authority: 'https://login.microsoftonline.com/' + authority
     },
     cache: {
       cacheLocation: "localStorage",

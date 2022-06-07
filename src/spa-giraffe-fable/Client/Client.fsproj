@@ -10,6 +10,7 @@
     <None Include="paket.references" />
     <Content Include="package.json" />
     <Content Include="webpack.config.js" />
+    <Content Include="src\style.scss" />
     <Compile Include="src\TimesheetAppTypes.fs" />
     <Compile Include="src\TimesheetAppRouter.fs" />
     <Compile Include="src\TimesheetAppMsal.fs" />
