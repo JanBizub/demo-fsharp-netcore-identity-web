@@ -14,6 +14,7 @@ let webApp =
   choose [
     GET
     >=> route "/api/cars"
+    >=> Handler.authenticate
     >=> CarsHandler.get() 
   ]
 
@@ -26,6 +27,14 @@ let configureServices (context:WebHostBuilderContext) (services: IServiceCollect
       .Build()
       :> IConfiguration
 
+  services.AddCors(fun options ->
+  options.AddPolicy(name = "Policy",
+    configurePolicy = fun policyBuilder ->
+      policyBuilder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader() |> ignore)) |> ignore
+  
   services.AddMicrosoftIdentityWebApiAuthentication(configuration) |> ignore
   services.AddGiraffe() |> ignore
 
@@ -38,6 +47,7 @@ let configureApp (app : IApplicationBuilder) =
   | false ->
     app.UseGiraffeErrorHandler(Handler.errorHandler)
       .UseHttpsRedirection())
+      .UseCors("Policy")
       .UseStaticFiles()
       .UseAuthentication()
       .UseAuthorization()      

@@ -1,5 +1,5 @@
 import { oneOf, top, map } from "../fable_modules/Fable.Elmish.Browser.3.0.4/parser.fs.js";
-import { AppState, Route } from "./TimesheetAppTypes.js";
+import { AppState, Route } from "./AppTypes.js";
 import { singleton } from "../fable_modules/fable-library.3.7.11/List.js";
 import { Cmd_none } from "../fable_modules/Fable.Elmish.3.1.0/cmd.fs.js";
 

@@ -1,6 +1,6 @@
 source https://api.nuget.org/v3/index.json
 
-nuget FSharp.Core = 6.0.3
+nuget FSharp.Core = 6.0.4
 
 group GirraffeWebApp
     source https://www.nuget.org/api/v2

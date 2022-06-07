@@ -1,6 +1,6 @@
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    FSharp.Core (6.0.3)
+    FSharp.Core (6.0.4)
 
 GROUP Fable
 RESTRICTION: == net6.0

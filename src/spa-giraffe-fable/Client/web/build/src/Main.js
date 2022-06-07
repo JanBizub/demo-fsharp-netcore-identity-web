@@ -1,14 +1,14 @@
 import { createSilentRequest, createMsalInstance } from "../fable-msal/Fable.Msal/Fable.Msal.js";
 import { ProgramModule_mkProgram } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
-import { update as update_1, init as init_1 } from "./TimesheetAppState.js";
+import { update as update_1, init as init_1 } from "./State.js";
 import { createElement } from "react";
-import { Render } from "./TimesheetAppView.js";
+import { Render } from "./View.js";
 import { Program_Internal_withReactSynchronousUsing } from "../fable_modules/Fable.Elmish.React.3.0.1/react.fs.js";
 import { lazyView2With } from "../fable_modules/Fable.Elmish.HMR.4.1.0/common.fs.js";
 import { uncurry } from "../fable_modules/fable-library.3.7.11/Util.js";
 import { ProgramModule_Internal_toNavigableWith, ProgramModule_Internal_subscribe, ProgramModule_Internal_unsubscribe } from "../fable_modules/Fable.Elmish.Browser.3.0.4/navigation.fs.js";
 import { parseHash } from "../fable_modules/Fable.Elmish.Browser.3.0.4/parser.fs.js";
-import { urlUpdate as urlUpdate_2, pageParser } from "./TimesheetAppRouter.js";
+import { urlUpdate as urlUpdate_2, pageParser } from "./Router.js";
 import { Program_withDebuggerUsing, Debugger_showWarning, Debugger_showError } from "../fable_modules/Fable.Elmish.Debugger.3.3.0/debugger.fs.js";
 import { empty as empty_1, cons, singleton, ofArray } from "../fable_modules/fable-library.3.7.11/List.js";
 import { newGuid } from "../fable_modules/fable-library.3.7.11/Guid.js";
@@ -17,7 +17,7 @@ import { Auto_generateBoxedEncoder_Z20B7B430, uint64, int64, decimal } from "../
 import { Auto_generateBoxedDecoder_79988AEF, uint64 as uint64_1, int64 as int64_1, decimal as decimal_1 } from "../fable_modules/Thoth.Json.7.0.0/Decode.fs.js";
 import { empty } from "../fable_modules/Thoth.Json.7.0.0/Extra.fs.js";
 import { ExtraCoders } from "../fable_modules/Thoth.Json.7.0.0/Types.fs.js";
-import { AppState$reflection } from "./TimesheetAppTypes.js";
+import { AppState$reflection } from "./Types.js";
 import { fromValue } from "../fable_modules/Thoth.Json.7.0.0/Decode.fs.js";
 import { Debugger_ConnectionOptions } from "../fable_modules/Fable.Elmish.Debugger.3.3.0/debugger.fs.js";
 import { getCaseFields, getCaseName as getCaseName_1, isUnion } from "../fable_modules/fable-library.3.7.11/Reflection.js";

@@ -11,11 +11,11 @@
     <Content Include="package.json" />
     <Content Include="webpack.config.js" />
     <Content Include="src\style.scss" />
-    <Compile Include="src\TimesheetAppTypes.fs" />
-    <Compile Include="src\TimesheetAppRouter.fs" />
-    <Compile Include="src\TimesheetAppMsal.fs" />
-    <Compile Include="src\TimesheetAppState.fs" />
-    <Compile Include="src\TimesheetAppView.fs" />
+    <Compile Include="src\Types.fs" />
+    <Compile Include="src\Router.fs" />
+    <Compile Include="src\HttpRequests.fs" />
+    <Compile Include="src\State.fs" />
+    <Compile Include="src\View.fs" />
     <Compile Include="src\Main.fs" />
     <Content Include="web\assets\index.html" />
   </ItemGroup>

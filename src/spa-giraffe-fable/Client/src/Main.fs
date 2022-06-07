@@ -16,7 +16,7 @@ let pci =
   |> Msal.createMsalInstance
 
 let authenticatedProgram pci = 
-  Program.mkProgram TimesheetAppState.init (TimesheetAppState.update pci) TimesheetAppView.Render
+  Program.mkProgram State.init (State.update pci) View.Render
   
 let createProgram program =
   program
