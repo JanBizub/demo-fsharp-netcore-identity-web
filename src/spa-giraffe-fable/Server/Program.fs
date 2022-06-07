@@ -13,9 +13,8 @@ open Microsoft.Extensions.Configuration
 let webApp =
   choose [
     GET
-    >=> Handler.authorize
-    >=> route "/"
-    >=> Home.indexHandler "Hello from F#"
+    >=> route "/api/cars"
+    >=> CarsHandler.get() 
   ]
 
 
@@ -27,9 +26,8 @@ let configureServices (context:WebHostBuilderContext) (services: IServiceCollect
       .Build()
       :> IConfiguration
 
-  services.AddMicrosoftIdentityWebAppAuthentication(configuration) |> ignore
+  services.AddMicrosoftIdentityWebApiAuthentication(configuration) |> ignore
   services.AddGiraffe() |> ignore
-//  services.AddRazorPages().AddMicrosoftIdentityUI() |> ignore
 
 
 let configureApp (app : IApplicationBuilder) =
@@ -39,9 +37,10 @@ let configureApp (app : IApplicationBuilder) =
     app.UseDeveloperExceptionPage()
   | false ->
     app.UseGiraffeErrorHandler(Handler.errorHandler)
-       .UseHttpsRedirection())
+      .UseHttpsRedirection())
       .UseStaticFiles()
       .UseAuthentication()
+      .UseAuthorization()      
       .UseGiraffe(webApp)
 
 
