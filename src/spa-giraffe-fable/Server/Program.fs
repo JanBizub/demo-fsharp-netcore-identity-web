@@ -27,15 +27,15 @@ let configureServices (context:WebHostBuilderContext) (services: IServiceCollect
       .Build()
       :> IConfiguration
 
-  services.AddCors(fun options ->
-  options.AddPolicy(name = "Policy",
+  services.AddCors(fun options -> options.AddPolicy(name = "default",
     configurePolicy = fun policyBuilder ->
       policyBuilder
         .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader() |> ignore)) |> ignore
   
-  services.AddMicrosoftIdentityWebApiAuthentication(configuration) |> ignore
+  services.AddMicrosoftIdentityWebApiAuthentication(configuration,subscribeToJwtBearerMiddlewareDiagnosticsEvents=true) |> ignore
+  services.AddAuthorization() |> ignore
   services.AddGiraffe() |> ignore
 
 
@@ -47,10 +47,10 @@ let configureApp (app : IApplicationBuilder) =
   | false ->
     app.UseGiraffeErrorHandler(Handler.errorHandler)
       .UseHttpsRedirection())
-      .UseCors("Policy")
+      .UseCors("default")
       .UseStaticFiles()
       .UseAuthentication()
-      .UseAuthorization()      
+      .UseAuthorization()
       .UseGiraffe(webApp)
 
 

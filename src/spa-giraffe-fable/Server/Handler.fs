@@ -4,7 +4,6 @@ module Handler
 open System
 open Microsoft.AspNetCore.Http
 open Giraffe
-open Microsoft.AspNetCore.Authentication.OpenIdConnect;
 open Microsoft.Extensions.Logging
 
 let errorHandler (ex : Exception) (logger : ILogger) =
@@ -13,4 +12,4 @@ let errorHandler (ex : Exception) (logger : ILogger) =
 
 
 let authenticate : HttpFunc -> HttpContext -> HttpFuncResult = 
-  requiresAuthentication(challenge OpenIdConnectDefaults.AuthenticationScheme)
+  requiresAuthentication(challenge "Bearer")

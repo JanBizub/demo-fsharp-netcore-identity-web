@@ -29,8 +29,8 @@ import { some, value as value_9 } from "../fable_modules/fable-library.3.7.11/Op
 import { Cmd_batch, Cmd_none, Cmd_map } from "../fable_modules/Fable.Elmish.3.1.0/cmd.fs.js";
 import { Model$1, Msg$1 } from "../fable_modules/Fable.Elmish.HMR.4.1.0/hmr.fs.js";
 import { ProgramModule_map, ProgramModule_runWith } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
-import { PromiseBuilder__Delay_62FBFDE1, PromiseBuilder__Run_212F1D4B } from "../fable_modules/Fable.Promise.2.2.0/Promise.fs.js";
-import { promise } from "../fable_modules/Fable.Promise.2.2.0/PromiseImpl.fs.js";
+import { PromiseBuilder__Delay_62FBFDE1, PromiseBuilder__Run_212F1D4B } from "../fable_modules/Fable.Promise.3.1.3/Promise.fs.js";
+import { promise } from "../fable_modules/Fable.Promise.3.1.3/PromiseImpl.fs.js";
 import { RedirectRequest } from "../fable-msal/Fable.Msal/Fable.Msal.Types.js";
 
 export const clientId = "4a84817c-572d-4769-9327-a60502b1d938";
@@ -239,15 +239,15 @@ export function createProgram(program) {
             });
         }
     }))));
-    pr_2 = (pr_1.then(void 0, ((e) => {
+    pr_2 = (pr_1.catch((e) => {
         if (((e.message.indexOf("no_account_error") >= 0) ? true : (e.message.indexOf("monitor_window_timeout") >= 0)) ? true : (e.message.indexOf("interaction_required") >= 0)) {
             const pr = pci.loginRedirect(new RedirectRequest(empty_1()));
-            pr.then();
+            void pr;
         }
         else {
             window.alert(some(e.message));
         }
-    })));
-    pr_2.then();
+    }));
+    void pr_2;
 })();
 
