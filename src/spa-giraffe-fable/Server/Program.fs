@@ -14,7 +14,7 @@ let webApp =
   choose [
     GET
     >=> route "/api/cars"
-    >=> Handler.authenticate
+    >=> Handler.mustBeAuthenticated
     >=> CarsHandler.get() 
   ]
 

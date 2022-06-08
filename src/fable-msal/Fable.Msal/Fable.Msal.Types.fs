@@ -64,6 +64,7 @@ type SilentRequest =
 
 type RedirectRequest = 
   {
+  prompt: string
   scopes: string list
   }
 

@@ -13,5 +13,5 @@ module Msal =
 
   let createSilentRequest (pci: PublicClientApplication) = {
     account = pci.getAllAccounts().[0]
-    scopes  = ["openid"; "profile"]
+    scopes  = [ "openid"; "profile"; ]
     }

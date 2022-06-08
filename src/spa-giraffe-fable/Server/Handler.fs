@@ -13,3 +13,13 @@ let errorHandler (ex : Exception) (logger : ILogger) =
 
 let authenticate : HttpFunc -> HttpContext -> HttpFuncResult = 
   requiresAuthentication(challenge "Bearer")
+
+
+let private unauthenticated : HttpFunc -> HttpContext -> HttpFuncResult =
+  RequestErrors.UNAUTHORIZED
+    "Basic"                         // todo: what does 'scheme' means in terms of authentication?
+    "Aimtec"                        // todo: what does 'realm' means in terms of authentication?
+    "You are unauthenticated!"
+
+let mustBeAuthenticated : HttpFunc -> HttpContext -> HttpFuncResult = 
+  requiresAuthentication unauthenticated
