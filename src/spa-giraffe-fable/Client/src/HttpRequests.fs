@@ -17,6 +17,12 @@ let getCars (pci: PublicClientApplication)  =
   async {
     let! authResponse = pci |> Msal.createSilentRequest |> pci.acquireTokenSilent |> Async.AwaitPromise
     let  idToken = authResponse.idToken
+    
+    Browser.Dom.console.log "ID Token -----------"
+    Browser.Dom.console.log authResponse.idToken
+    Browser.Dom.console.log "Access Token -------"
+    Browser.Dom.console.log authResponse.accessToken
+    
     let! response =
       Http.request "https://localhost:61235/api/cars" |> getRequest idToken
     

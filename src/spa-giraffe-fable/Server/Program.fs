@@ -34,7 +34,9 @@ let configureServices (context:WebHostBuilderContext) (services: IServiceCollect
         .AllowAnyMethod()
         .AllowAnyHeader() |> ignore)) |> ignore
   
-  services.AddMicrosoftIdentityWebApiAuthentication(configuration,subscribeToJwtBearerMiddlewareDiagnosticsEvents=true) |> ignore
+  services.AddMicrosoftIdentityWebApiAuthentication(configuration,subscribeToJwtBearerMiddlewareDiagnosticsEvents=true)
+  |> ignore
+  
   services.AddAuthorization() |> ignore
   services.AddGiraffe() |> ignore
 

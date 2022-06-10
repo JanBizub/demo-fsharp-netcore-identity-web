@@ -32,14 +32,18 @@ promise {
   
   match authResult with
   | Some authResult ->
-    let! authRes = pci |> Msal.createSilentRequest |> pci.acquireTokenSilent
-
+    let! authRes =
+      { account = pci.getAllAccounts().[0]; scopes  = [ "openid"; "profile"; ] }
+      |> pci.acquireTokenSilent
+    
     pci
     |> authenticatedProgram 
     |> createProgram
     
   | None ->
-    let! authRes = pci |> Msal.createSilentRequest |> pci.acquireTokenSilent
+    let! authRes =
+      { account = pci.getAllAccounts().[0]; scopes  = [ "openid"; "profile"; ] }
+      |> pci.acquireTokenSilent
 
     pci
     |> authenticatedProgram 

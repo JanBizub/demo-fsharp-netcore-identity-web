@@ -1,4 +1,4 @@
-import { createSilentRequest, createMsalInstance } from "../fable-msal/Fable.Msal/Fable.Msal.js";
+import { createMsalInstance } from "../fable-msal/Fable.Msal/Fable.Msal.js";
 import { ProgramModule_mkProgram } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { update as update_1, init as init_1 } from "./State.js";
 import { createElement } from "react";
@@ -31,7 +31,7 @@ import { Model$1, Msg$1 } from "../fable_modules/Fable.Elmish.HMR.4.1.0/hmr.fs.j
 import { ProgramModule_map, ProgramModule_runWith } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { PromiseBuilder__Delay_62FBFDE1, PromiseBuilder__Run_212F1D4B } from "../fable_modules/Fable.Promise.3.1.3/Promise.fs.js";
 import { promise } from "../fable_modules/Fable.Promise.3.1.3/PromiseImpl.fs.js";
-import { RedirectRequest } from "../fable-msal/Fable.Msal/Fable.Msal.Types.js";
+import { RedirectRequest, SilentRequest } from "../fable-msal/Fable.Msal/Fable.Msal.Types.js";
 
 export const clientId = "4a84817c-572d-4769-9327-a60502b1d938";
 
@@ -224,7 +224,7 @@ export function createProgram(program) {
         let arg00_1, arg00;
         const authResult = _arg1;
         if (authResult == null) {
-            return ((arg00_1 = createSilentRequest(pci), pci.acquireTokenSilent(arg00_1))).then((_arg3) => {
+            return ((arg00_1 = (new SilentRequest(pci.getAllAccounts()[0], ofArray(["openid", "profile"]))), pci.acquireTokenSilent(arg00_1))).then((_arg3) => {
                 const authRes_1 = _arg3;
                 createProgram(authenticatedProgram(pci));
                 return Promise.resolve();
@@ -232,7 +232,7 @@ export function createProgram(program) {
         }
         else {
             const authResult_1 = authResult;
-            return ((arg00 = createSilentRequest(pci), pci.acquireTokenSilent(arg00))).then((_arg2) => {
+            return ((arg00 = (new SilentRequest(pci.getAllAccounts()[0], ofArray(["openid", "profile"]))), pci.acquireTokenSilent(arg00))).then((_arg2) => {
                 const authRes = _arg2;
                 createProgram(authenticatedProgram(pci));
                 return Promise.resolve();
