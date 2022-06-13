@@ -58,7 +58,7 @@ type Configuration =
 
 type SilentRequest = 
   {
-  account : AccountInfo
+  account : AccountInfo option
   scopes  : string list
   }
 

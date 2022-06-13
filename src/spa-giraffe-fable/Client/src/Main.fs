@@ -33,7 +33,8 @@ promise {
   match authResult with
   | Some authResult ->
     let! authRes =
-      { account = pci.getAllAccounts().[0]; scopes  = [ "openid"; "profile"; ] }
+      { account = pci.getAllAccounts().[0] |> Some
+        scopes  = [ "openid"; "profile"; ] }
       |> pci.acquireTokenSilent
     
     pci
@@ -42,7 +43,8 @@ promise {
     
   | None ->
     let! authRes =
-      { account = pci.getAllAccounts().[0]; scopes  = [ "openid"; "profile"; ] }
+      { account = pci.getAllAccounts().[0] |> Some
+        scopes  = [ "openid"; "profile"; ] }
       |> pci.acquireTokenSilent
 
     pci
