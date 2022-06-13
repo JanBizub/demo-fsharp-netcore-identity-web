@@ -17,7 +17,7 @@ let init result =
 let update (pci: PublicClientApplication) msg (state: AppState) =
   match msg with
   | CarsRequest ->
-    state,
+    { state with Cars = [] },
     Cmd.OfAsync.either
       HttpRequests.getCars pci
       CarsResponse

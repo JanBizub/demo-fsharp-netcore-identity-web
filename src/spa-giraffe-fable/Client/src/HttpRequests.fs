@@ -23,20 +23,16 @@ let getCars (pci: PublicClientApplication)  =
       |> pci.acquireTokenSilent
       |> Async.AwaitPromise
       
-    // Bearer was not authenticated. Failure message: IDW10201: Neither scope or roles claim was found in the bearer
-    // token. Authentication scheme used: 'Bearer'.
-
-    // Bearer was not authenticated. Failure message: IDW10201: Neither scope or roles claim was found in the bearer t
-    // oken. Authentication scheme used: 'Bearer'.
-      
+    console.warn "BEGIN REQUEST"  
     console.log "ID Token -----------"
     console.log authResponse.idToken
     console.log "Access Token -------"
     console.log authResponse.accessToken
+    console.warn "END REQUEST"
     
     let! response =
       Http.request "https://localhost:61235/api/cars"
-      |> getRequest authResponse.idToken
+      |> getRequest authResponse.accessToken
     
     match response.statusCode with
     | 200 -> return response.responseText |> Json.parseAs<string list>  |> Ok

@@ -241,7 +241,7 @@ export function createProgram(program) {
     }))));
     pr_2 = (pr_1.catch((e) => {
         if (((e.message.indexOf("no_account_error") >= 0) ? true : (e.message.indexOf("monitor_window_timeout") >= 0)) ? true : (e.message.indexOf("interaction_required") >= 0)) {
-            const pr = pci.loginRedirect(new RedirectRequest("consent", ofArray(["openid", "profile"])));
+            const pr = pci.loginRedirect(new RedirectRequest("consent", ofArray(["openid", "profile", "access_as_user"])));
             void pr;
         }
         else {

@@ -57,7 +57,7 @@ promise {
        || e.Message.Contains("monitor_window_timeout")
        || e.Message.Contains("interaction_required")
        
-      then pci.loginRedirect { scopes = [ "openid"; "profile"; ]; prompt = "consent" } |> Promise.start
+      then pci.loginRedirect { scopes = [ "openid"; "profile"; "access_as_user" ]; prompt = "consent" } |> Promise.start
       else Browser.Dom.window.alert e.Message; Browser.Dom.console.error e.Message
     )
   |> Promise.start

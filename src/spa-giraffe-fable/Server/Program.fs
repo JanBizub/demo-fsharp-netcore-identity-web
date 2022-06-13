@@ -1,7 +1,6 @@
 module Server.App
 open System
 open System.IO
-open System.IdentityModel.Tokens.Jwt
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Hosting
@@ -37,9 +36,6 @@ let configureServices (context:WebHostBuilderContext) (services: IServiceCollect
   
   services.AddMicrosoftIdentityWebApiAuthentication(configuration,subscribeToJwtBearerMiddlewareDiagnosticsEvents=true)
   |> ignore
-  
-//  JwtSecurityTokenHandler.DefaultMapInboundClaims <- false
-//  Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII <- true
   
   services.AddAuthorization() |> ignore
   services.AddGiraffe() |> ignore

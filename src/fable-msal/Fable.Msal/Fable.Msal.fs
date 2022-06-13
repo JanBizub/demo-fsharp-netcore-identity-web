@@ -12,6 +12,6 @@ module Msal =
     importMember "./Fable.Msal.js"
 
   let createSilentRequest (pci: PublicClientApplication) = {
-    account = pci.getAllAccounts().[0]
+    account = Some (pci.getAllAccounts().[0])
     scopes  = [ "openid"; "profile"; ]
     }
