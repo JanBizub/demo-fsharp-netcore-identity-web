@@ -2,6 +2,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>jan.bizub@outlook.com</Authors>
+    <Description>Fable Bindings for @azure/msal-browser</Description>
+    <PackageId>Fable.Msal</PackageId>
+    <Title>Fable.Msal</Title>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="paket.references" />

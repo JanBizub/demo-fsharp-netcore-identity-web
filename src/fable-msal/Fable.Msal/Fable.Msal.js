@@ -4,19 +4,9 @@
 // https://stackoverflow.com/questions/63347299/unable-to-acquire-token-silently-or-via-redirect-using-msal-browser
 // https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/errors.md
 
-export var createMsalInstance = (clientId,authority) => {
-  const msalConfig = {
-    auth: {
-      clientId: clientId,
-      authority: 'https://login.microsoftonline.com/' + authority
-    },
-    cache: {
-      cacheLocation: "localStorage",
-    },
-  };
-
+export var createPublicClientApplication = (configuration) => {
   const msalInstance =
-    new msal.PublicClientApplication(msalConfig);
+    new msal.PublicClientApplication(configuration);
 
   return msalInstance
 }
