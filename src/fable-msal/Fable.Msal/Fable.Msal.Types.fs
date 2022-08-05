@@ -162,6 +162,13 @@ type RedirectRequest =
   prompt: string
   scopes: string list
   }
+  
+[<RequireQualifiedAccess>]
+module RedirectRequest =
+  let empty () = {
+    prompt = ""
+    scopes = []
+  }
 
 type [<AllowNullLiteral>] IPublicClientApplication =
   abstract acquireTokenSilent: silentRequest: SilentRequest -> Promise<AuthenticationResult>
