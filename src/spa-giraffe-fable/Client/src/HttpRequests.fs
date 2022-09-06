@@ -6,7 +6,6 @@ open Fable.SimpleJson
 open Fable.Msal
 open Fable.Core
 open System
-
 open Browser.Dom
 
 let getRequest token (request: HttpRequest) = 
@@ -18,7 +17,7 @@ let getRequest token (request: HttpRequest) =
 
 
 let getCars (pci: PublicClientApplication)  =
-  let silentRequest = silentRequest {
+  let silentRequest = msalSilentRequest {
      account       (pci.getAllAccounts().[0])
      scopes        [ "openid"; "profile"; ]
      correlationId Guid.Empty
