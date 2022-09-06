@@ -1,6 +1,5 @@
 import { Http_request, Headers_authorization, Headers_contentType, Http_header, Http_method, Http_send } from "../fable_modules/Fable.SimpleHttp.3.0.0/Http.fs.js";
 import { HttpMethod } from "../fable_modules/Fable.SimpleHttp.3.0.0/Types.fs.js";
-import { Fable_Msal_SilentRequestCE_msalSilentRequest, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Yield_1505, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Account_31E51057, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Scopes_Z1696520D, Fable_Msal_SilentRequestCE_SilentRequestBuilder__CorrelationId_Z21E859ED } from "../fable-msal/Fable.Msal/SilentRequestCE.js";
 import { ofArray } from "../fable_modules/fable-library.3.7.11/List.js";
 import { singleton } from "../fable_modules/fable-library.3.7.11/AsyncBuilder.js";
 import { awaitPromise } from "../fable_modules/fable-library.3.7.11/Async.js";
@@ -17,7 +16,9 @@ export function getRequest(token, request) {
 }
 
 export function getCars(pci) {
-    const silentRequest = Fable_Msal_SilentRequestCE_SilentRequestBuilder__CorrelationId_Z21E859ED(Fable_Msal_SilentRequestCE_msalSilentRequest, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Scopes_Z1696520D(Fable_Msal_SilentRequestCE_msalSilentRequest, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Account_31E51057(Fable_Msal_SilentRequestCE_msalSilentRequest, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Yield_1505(Fable_Msal_SilentRequestCE_msalSilentRequest), pci.getAllAccounts()[0]), ofArray(["openid", "profile"])), "00000000-0000-0000-0000-000000000000");
+    let silentRequest;
+    const builder$0040 = Fable_Msal_SilentRequestCE_msalSilentRequest;
+    silentRequest = Fable_Msal_SilentRequestCE_SilentRequestBuilder__CorrelationId_Z21E859ED(builder$0040, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Scopes_Z1696520D(builder$0040, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Account_31E51057(builder$0040, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Yield_1505(builder$0040), pci.getAllAccounts()[0]), ofArray(["openid", "profile"])), "00000000-0000-0000-0000-000000000000");
     return singleton.Delay(() => singleton.Bind(awaitPromise(pci.acquireTokenSilent(silentRequest)), (_arg1) => {
         const authResponse = _arg1;
         console.warn(some("BEGIN REQUEST"));

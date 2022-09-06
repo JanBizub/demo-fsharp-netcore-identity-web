@@ -1,5 +1,3 @@
-import { msalConfiguration, ConfigurationBuilder__Yield_1505, ConfigurationBuilder__Auth_27E9ADC4 } from "../fable-msal/Fable.Msal/MsalConfigurationCE.js";
-import { msalBrowserAuthOptions, BrowserAuthOptionsBuilder__Yield_1505, BrowserAuthOptionsBuilder__ClientId_33743E55, BrowserAuthOptionsBuilder__Authority_33743E55 } from "../fable-msal/Fable.Msal/BrowserAuthOptionsCE.js";
 import { PublicClientApplication } from "@azure/msal-browser";
 import { ProgramModule_mkProgram } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { update as update_1, init as init_1 } from "./State.js";
@@ -33,10 +31,12 @@ import { Model$1, Msg$1 } from "../fable_modules/Fable.Elmish.HMR.4.1.0/hmr.fs.j
 import { ProgramModule_map, ProgramModule_runWith } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { PromiseBuilder__Delay_62FBFDE1, PromiseBuilder__Run_212F1D4B } from "../fable_modules/Fable.Promise.3.1.3/Promise.fs.js";
 import { promise } from "../fable_modules/Fable.Promise.3.1.3/PromiseImpl.fs.js";
-import { msalSilentRequest, SilentRequestBuilder__Yield_1505, SilentRequestBuilder__Account_31E51057, SilentRequestBuilder__Scopes_Z1696520D } from "../fable-msal/Fable.Msal/SilentRequestCE.js";
-import { msalRedirectRequest, RedirectRequestBuilder__Yield_1505, RedirectRequestBuilder__Scopes_Z56A4FE0, RedirectRequestBuilder__Prompt_644202EA } from "../fable-msal/Fable.Msal/RedirectRequestCE.js";
 
-export const pciConfig = ConfigurationBuilder__Auth_27E9ADC4(msalConfiguration, ConfigurationBuilder__Yield_1505(msalConfiguration), BrowserAuthOptionsBuilder__Authority_33743E55(msalBrowserAuthOptions, BrowserAuthOptionsBuilder__ClientId_33743E55(msalBrowserAuthOptions, BrowserAuthOptionsBuilder__Yield_1505(msalBrowserAuthOptions), "4a84817c-572d-4769-9327-a60502b1d938"), "https://login.microsoftonline.com/a6f31cb4-f0fc-4936-8c48-b9c915f41547"));
+export const pciConfig = (() => {
+    let builder$0040_1;
+    const builder$0040 = Fable_Msal_MsalConfigurationCE_msalConfiguration;
+    return Fable_Msal_MsalConfigurationCE_ConfigurationBuilder__Auth_27E9ADC4(builder$0040, Fable_Msal_MsalConfigurationCE_ConfigurationBuilder__Yield_1505(builder$0040), (builder$0040_1 = Fable_Msal_BrowserAuthOptionsCE_msalBrowserAuthOptions, Fable_Msal_BrowserAuthOptionsCE_BrowserAuthOptionsBuilder__Authority_33743E55(builder$0040_1, Fable_Msal_BrowserAuthOptionsCE_BrowserAuthOptionsBuilder__ClientId_33743E55(builder$0040_1, Fable_Msal_BrowserAuthOptionsCE_BrowserAuthOptionsBuilder__Yield_1505(builder$0040_1), "4a84817c-572d-4769-9327-a60502b1d938"), "https://login.microsoftonline.com/a6f31cb4-f0fc-4936-8c48-b9c915f41547")));
+})();
 
 export const pci = new PublicClientApplication(pciConfig);
 
@@ -220,7 +220,9 @@ export function createProgram(program) {
     let pr_2;
     const pr_1 = PromiseBuilder__Run_212F1D4B(promise, PromiseBuilder__Delay_62FBFDE1(promise, () => (pci.handleRedirectPromise().then((_arg1) => {
         const authResult = _arg1;
-        const silentRequest = SilentRequestBuilder__Scopes_Z1696520D(msalSilentRequest, SilentRequestBuilder__Account_31E51057(msalSilentRequest, SilentRequestBuilder__Yield_1505(msalSilentRequest), pci.getAllAccounts()[0]), ofArray(["openid", "profile"]));
+        let silentRequest;
+        const builder$0040_1 = Fable_Msal_SilentRequestCE_msalSilentRequest;
+        silentRequest = Fable_Msal_SilentRequestCE_SilentRequestBuilder__Scopes_Z1696520D(builder$0040_1, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Account_31E51057(builder$0040_1, Fable_Msal_SilentRequestCE_SilentRequestBuilder__Yield_1505(builder$0040_1), pci.getAllAccounts()[0]), ofArray(["openid", "profile"]));
         if (authResult == null) {
             return pci.acquireTokenSilent(silentRequest).then((_arg3) => {
                 const authRes_1 = _arg3;
@@ -239,7 +241,9 @@ export function createProgram(program) {
     }))));
     pr_2 = (pr_1.catch((e) => {
         if (((e.message.indexOf("no_account_error") >= 0) ? true : (e.message.indexOf("monitor_window_timeout") >= 0)) ? true : (e.message.indexOf("interaction_required") >= 0)) {
-            const redirectRequest = RedirectRequestBuilder__Prompt_644202EA(msalRedirectRequest, RedirectRequestBuilder__Scopes_Z56A4FE0(msalRedirectRequest, RedirectRequestBuilder__Yield_1505(msalRedirectRequest), ofArray(["openid", "profile", "api://32ebd7e2-5c5d-4e32-85d2-a5c2ed87ae66/access_as_user"])), "consent");
+            let redirectRequest;
+            const builder$0040_2 = Fable_Msal_RedirectRequestCE_msalRedirectRequest;
+            redirectRequest = Fable_Msal_RedirectRequestCE_RedirectRequestBuilder__Prompt_644202EA(builder$0040_2, Fable_Msal_RedirectRequestCE_RedirectRequestBuilder__Scopes_Z56A4FE0(builder$0040_2, Fable_Msal_RedirectRequestCE_RedirectRequestBuilder__Yield_1505(builder$0040_2), ofArray(["openid", "profile", "api://32ebd7e2-5c5d-4e32-85d2-a5c2ed87ae66/access_as_user"])), "consent");
             const pr = pci.loginRedirect(redirectRequest);
             void pr;
         }

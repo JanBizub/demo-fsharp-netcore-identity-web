@@ -10,3 +10,4 @@ group Fable
   Fable.SimpleHttp
   Fable.SimpleJson
   Feliz
+  Fable.Msal

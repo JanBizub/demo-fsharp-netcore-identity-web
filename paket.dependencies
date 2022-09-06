@@ -26,3 +26,4 @@ group Fable
 	nuget Fable.SimpleHttp 3.0.0
 	nuget Fable.SimpleJson 3.19.0
 	nuget Feliz 1.40.0
+    nuget Fable.Msal 0.0.6-wip

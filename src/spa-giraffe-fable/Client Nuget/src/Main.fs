@@ -64,7 +64,10 @@ promise {
     then
         let redirectRequest =
             msalRedirectRequest {
-                scopes [ "openid"; "profile"; "api://32ebd7e2-5c5d-4e32-85d2-a5c2ed87ae66/access_as_user" ]
+                scopes [ "openid"
+                         "profile"
+                         "api://32ebd7e2-5c5d-4e32-85d2-a5c2ed87ae66/access_as_user" ]
+
                 prompt "consent"
             }
 

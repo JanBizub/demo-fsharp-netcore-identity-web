@@ -19,8 +19,5 @@
     <Compile Include="src\Main.fs" />
     <Content Include="web\assets\index.html" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\fable-msal\Fable.Msal\Fable.Msal.fsproj" />
-  </ItemGroup>
   <Import Project="..\..\..\.paket\Paket.Restore.targets" />
 </Project>
