@@ -1,6 +1,6 @@
 source https://api.nuget.org/v3/index.json
 
-nuget FSharp.Core = 6.0.4
+nuget FSharp.Core = 6.0.5
 
 group GirraffeWebApp
     source https://www.nuget.org/api/v2
@@ -17,7 +17,7 @@ group Fable
     source https://www.nuget.org/api/v2
     framework: net6.0
     
-    nuget Fable.Core = 3.2.8
+    nuget Fable.Core = 3.7.1
     nuget Fable.Elmish 3.1.0
     nuget Fable.Elmish.Browser 3.0.4
     nuget Fable.Elmish.Debugger 3.3.0

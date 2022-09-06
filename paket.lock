@@ -1,6 +1,6 @@
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    FSharp.Core (6.0.4)
+    FSharp.Core (6.0.5)
 
 GROUP Fable
 RESTRICTION: == net6.0
@@ -32,8 +32,7 @@ NUGET
       Fable.Browser.Event (>= 1.5)
       Fable.Core (>= 3.0)
       FSharp.Core (>= 4.7.2)
-    Fable.Core (3.2.8)
-      FSharp.Core (>= 4.7.2)
+    Fable.Core (3.7.1)
     Fable.Elmish (3.1)
       Fable.Core (>= 3.0)
       FSharp.Core (>= 4.6.2)
@@ -84,7 +83,7 @@ NUGET
     Feliz.CompilerPlugins (1.9)
       Fable.AST (>= 3.0)
       FSharp.Core (>= 4.7.2)
-    FSharp.Core (6.0.4)
+    FSharp.Core (6.0.5)
     Thoth.Json (7.0)
       Fable.Core (>= 3.1.6)
       FSharp.Core (>= 4.7.2)

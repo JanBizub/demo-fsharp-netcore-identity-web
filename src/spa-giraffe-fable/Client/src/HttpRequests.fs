@@ -5,21 +5,27 @@ open Fable.SimpleHttp
 open Fable.SimpleJson
 open Fable.Msal
 open Fable.Core
-
+open System
 open Browser.Dom
 
-let getRequest idToken (request: HttpRequest) = 
+let getRequest token (request: HttpRequest) = 
   request
   |> Http.method GET
   |> Http.header (Headers.contentType "application/json")
-  |> Http.header (Headers.authorization $"Bearer {idToken}")
+  |> Http.header (Headers.authorization $"Bearer {token}")
   |> Http.send
 
+
 let getCars (pci: PublicClientApplication)  =
+  let silentRequest = msalSilentRequest {
+     account       (pci.getAllAccounts().[0])
+     scopes        [ "openid"; "profile"; ]
+     correlationId Guid.Empty
+  }
+
   async {
     let! authResponse =
-      { account = pci.getAllAccounts().[0] |> Some
-        scopes = [ "api://32ebd7e2-5c5d-4e32-85d2-a5c2ed87ae66/access_as_user" ] }
+      silentRequest
       |> pci.acquireTokenSilent
       |> Async.AwaitPromise
       
