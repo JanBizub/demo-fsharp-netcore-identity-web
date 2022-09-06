@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="src\TGCEditor\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="paket.references" />
+    <Content Include="package.json" />
+    <Content Include="webpack.config.js" />
+    <Content Include="src\style.scss" />
+    <Compile Include="src\Types.fs" />
+    <Compile Include="src\Router.fs" />
+    <Compile Include="src\HttpRequests.fs" />
+    <Compile Include="src\State.fs" />
+    <Compile Include="src\View.fs" />
+    <Compile Include="src\Main.fs" />
+    <Content Include="web\assets\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\fable-msal\Fable.Msal\Fable.Msal.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\..\.paket\Paket.Restore.targets" />
+</Project>

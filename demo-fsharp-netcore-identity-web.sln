@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web-giraffe", "web-giraffe"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebApplication", "src\web-giraffe\WebApplication.fsproj", "{BD8B503E-B1D3-497D-A5A7-F736C1790D22}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client Nuget", "src\spa-giraffe-fable\Client Nuget\Client Nuget.fsproj", "{B2072A01-8817-4E23-B23F-A822717111EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD8B503E-B1D3-497D-A5A7-F736C1790D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2072A01-8817-4E23-B23F-A822717111EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2072A01-8817-4E23-B23F-A822717111EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2072A01-8817-4E23-B23F-A822717111EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2072A01-8817-4E23-B23F-A822717111EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{64853CB7-99F9-4322-9F8B-85B75429B6E8} = {CAE85A58-5501-493E-941F-DA4B8DC0A206}
 		{C3D79EF0-D8EB-401E-9DC6-C3D367F10291} = {7F84A222-8CB9-4EF0-94A4-80B0703CF2F3}
 		{BD8B503E-B1D3-497D-A5A7-F736C1790D22} = {2C848CA7-2AF0-4DEC-8065-493168054F62}
+		{B2072A01-8817-4E23-B23F-A822717111EA} = {CAE85A58-5501-493E-941F-DA4B8DC0A206}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D153479-C90C-46AE-99A1-16ADC719185A}
