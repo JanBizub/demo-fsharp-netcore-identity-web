@@ -7,7 +7,16 @@ open Elmish.React
 open Elmish.Navigation
 open Elmish.UrlParser
 open Fable.Msal
+open FsToolkit.ErrorHandling
 open Elmish.HMR // Elmish.HMR must be last open statement in order to HMR works correctly.
+
+let test: Validation<int, obj> =
+    validation {
+        let! a = Ok 1
+        and! b = Ok 3
+
+        return a + b
+    }
 
 let pciConfig =
     msalConfiguration {

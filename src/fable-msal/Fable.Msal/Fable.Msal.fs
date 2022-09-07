@@ -30,4 +30,5 @@ type PublicClientApplication(conf: Configuration) =
 
         // abstract member setActiveAccount: account: AccountInfo option -> unit
         // abstract member getActiveAccount: unit -> AccountInfo option
+
     end

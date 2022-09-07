@@ -159,5 +159,3 @@ type IPublicClientApplication =
     abstract loginRedirect: ?request: RedirectRequest -> Promise<unit>
     abstract setActiveAccount: account: AccountInfo option -> unit
     abstract getActiveAccount: unit -> AccountInfo option
-
-

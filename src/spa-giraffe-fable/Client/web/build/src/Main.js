@@ -1,5 +1,6 @@
 import { msalConfiguration, ConfigurationBuilder__Yield_1505, ConfigurationBuilder__Auth_27E9ADC4 } from "../fable-msal/Fable.Msal/MsalConfigurationCE.js";
-import { msalBrowserAuthOptions, BrowserAuthOptionsBuilder__Yield_1505, BrowserAuthOptionsBuilder__ClientId_33743E55, BrowserAuthOptionsBuilder__Authority_33743E55 } from "../fable-msal/Fable.Msal/BrowserAuthOptionsCE.js";
+import { BrowserAuthOptionsModule_empty } from "../fable-msal/Fable.Msal/Fable.Msal.Types.js";
+import { BrowserAuthOptions } from "../fable-msal/Fable.Msal/Fable.Msal.Types.js";
 import { PublicClientApplication } from "@azure/msal-browser";
 import { ProgramModule_mkProgram } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { update as update_1, init as init_1 } from "./State.js";
@@ -36,7 +37,12 @@ import { promise } from "../fable_modules/Fable.Promise.3.1.3/PromiseImpl.fs.js"
 import { msalSilentRequest, SilentRequestBuilder__Yield_1505, SilentRequestBuilder__Account_31E51057, SilentRequestBuilder__Scopes_Z1696520D } from "../fable-msal/Fable.Msal/SilentRequestCE.js";
 import { msalRedirectRequest, RedirectRequestBuilder__Yield_1505, RedirectRequestBuilder__Scopes_Z56A4FE0, RedirectRequestBuilder__Prompt_644202EA } from "../fable-msal/Fable.Msal/RedirectRequestCE.js";
 
-export const pciConfig = ConfigurationBuilder__Auth_27E9ADC4(msalConfiguration, ConfigurationBuilder__Yield_1505(msalConfiguration), BrowserAuthOptionsBuilder__Authority_33743E55(msalBrowserAuthOptions, BrowserAuthOptionsBuilder__ClientId_33743E55(msalBrowserAuthOptions, BrowserAuthOptionsBuilder__Yield_1505(msalBrowserAuthOptions), "4a84817c-572d-4769-9327-a60502b1d938"), "https://login.microsoftonline.com/a6f31cb4-f0fc-4936-8c48-b9c915f41547"));
+export const pciConfig = ConfigurationBuilder__Auth_27E9ADC4(msalConfiguration, ConfigurationBuilder__Yield_1505(msalConfiguration), (() => {
+    let state_1;
+    const state = BrowserAuthOptionsModule_empty();
+    state_1 = (new BrowserAuthOptions("4a84817c-572d-4769-9327-a60502b1d938", state.authority, state.redirectUri));
+    return new BrowserAuthOptions(state_1.clientId, "https://login.microsoftonline.com/a6f31cb4-f0fc-4936-8c48-b9c915f41547", state_1.redirectUri);
+})());
 
 export const pci = new PublicClientApplication(pciConfig);
 

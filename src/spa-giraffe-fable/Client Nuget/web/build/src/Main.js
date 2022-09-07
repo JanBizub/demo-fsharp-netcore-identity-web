@@ -1,3 +1,6 @@
+import { value as value_9, some } from "../fable_modules/fable-library.3.7.11/Option.js";
+import { ValidationCE_validation, ValidationCE_ValidationBuilder__MergeSources_Z5846AE20, ValidationCE_ValidationBuilder__BindReturn_28FF654F, ValidationCE_ValidationBuilder__Delay_Z29103BAD, ValidationCE_ValidationBuilder__Run_Z29103BAD } from "../fable_modules/FsToolkit.ErrorHandling.2.13.0/ValidationCE.fs.js";
+import { FSharpResult$2 } from "../fable_modules/fable-library.3.7.11/Choice.js";
 import { PublicClientApplication } from "@azure/msal-browser";
 import { ProgramModule_mkProgram } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { update as update_1, init as init_1 } from "./State.js";
@@ -25,12 +28,21 @@ import { join } from "../fable_modules/fable-library.3.7.11/String.js";
 import { Options$1 } from "../fable_modules/Fable.Elmish.Debugger.3.3.0/Fable.Import.RemoteDev.fs.js";
 import { connectViaExtension } from "remotedev";
 import { Internal_saveState, Internal_tryRestoreState } from "../fable_modules/Fable.Elmish.HMR.4.1.0/hmr.fs.js";
-import { some, value as value_9 } from "../fable_modules/fable-library.3.7.11/Option.js";
 import { Cmd_batch, Cmd_none, Cmd_map } from "../fable_modules/Fable.Elmish.3.1.0/cmd.fs.js";
 import { Model$1, Msg$1 } from "../fable_modules/Fable.Elmish.HMR.4.1.0/hmr.fs.js";
 import { ProgramModule_map, ProgramModule_runWith } from "../fable_modules/Fable.Elmish.3.1.0/program.fs.js";
 import { PromiseBuilder__Delay_62FBFDE1, PromiseBuilder__Run_212F1D4B } from "../fable_modules/Fable.Promise.3.1.3/Promise.fs.js";
 import { promise } from "../fable_modules/Fable.Promise.3.1.3/PromiseImpl.fs.js";
+
+console.log(some("Start"));
+
+export const test = ValidationCE_ValidationBuilder__Run_Z29103BAD(ValidationCE_validation, ValidationCE_ValidationBuilder__Delay_Z29103BAD(ValidationCE_validation, () => ValidationCE_ValidationBuilder__BindReturn_28FF654F(ValidationCE_validation, ValidationCE_ValidationBuilder__MergeSources_Z5846AE20(ValidationCE_validation, new FSharpResult$2(0, 1), new FSharpResult$2(0, 3)), (_arg1) => {
+    const b = _arg1[1] | 0;
+    const a = _arg1[0] | 0;
+    return (a + b) | 0;
+})));
+
+console.log(some(test));
 
 export const pciConfig = (() => {
     let builder$0040_1;

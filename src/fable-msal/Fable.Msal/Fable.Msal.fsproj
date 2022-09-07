@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <PackageVersion>0.0.6-wip</PackageVersion>
+    <PackageVersion>0.0.7-wip</PackageVersion>
     <Authors>jan.bizub@outlook.com</Authors>
     <Description>Fable Bindings for @azure/msal-browser</Description>
     <PackageId>Fable.Msal</PackageId>

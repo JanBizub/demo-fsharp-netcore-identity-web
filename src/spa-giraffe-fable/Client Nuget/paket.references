@@ -1,4 +1,5 @@
 FSharp.Core
+FsToolkit.ErrorHandling
 
 group Fable
   Fable.Core

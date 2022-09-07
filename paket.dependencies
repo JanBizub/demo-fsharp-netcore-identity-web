@@ -1,6 +1,7 @@
 source https://api.nuget.org/v3/index.json
 
 nuget FSharp.Core = 6.0.5
+nuget FsToolkit.ErrorHandling
 
 group GirraffeWebApp
     source https://www.nuget.org/api/v2

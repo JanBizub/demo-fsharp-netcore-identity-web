@@ -1,6 +1,8 @@
 NUGET
   remote: https://api.nuget.org/v3/index.json
     FSharp.Core (6.0.5)
+    FsToolkit.ErrorHandling (2.13)
+      FSharp.Core (>= 4.7.2) - restriction: >= netstandard2.0
 
 GROUP Fable
 RESTRICTION: == net6.0
@@ -56,7 +58,7 @@ NUGET
       Fable.Elmish (>= 3.0)
       Fable.React (>= 5.1)
       FSharp.Core (>= 4.6.2)
-    Fable.Msal (0.0.6-wip)
+    Fable.Msal (0.0.7-wip)
       Fable.Core (3.7.1)
       FSharp.Core (6.0.5)
     Fable.Parsimmon (4.1)
