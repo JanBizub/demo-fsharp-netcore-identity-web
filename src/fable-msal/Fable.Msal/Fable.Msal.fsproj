@@ -11,10 +11,12 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Compile Include="Fable.Msal.Types.fs" />
+    <Compile Include="Interfaces.fs" />
     <Compile Include="SilentRequestCE.fs" />
     <Compile Include="MsalConfigurationCE.fs" />
     <Compile Include="BrowserAuthOptionsCE.fs" />
     <Compile Include="RedirectRequestCE.fs" />
+    <Compile Include="PublicClientApplication3.fs" />
     <Compile Include="PublicClientApplication.fs" />
   </ItemGroup>
   <Import Project="..\..\..\.paket\Paket.Restore.targets" />
